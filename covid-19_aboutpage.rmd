@@ -1,0 +1,31 @@
+---
+title: "Predicting Future Coronavirus Cases"
+
+output: html_document
+---
+
+
+## The Goal
+
+Recent news regarding the spread of COVID-19 has emphasized the exponential growth of the disease and the need to "flatten the curve." This site provides a visual perspective into what that exponential growth will look like in the United States and the time frame in which this growth will occur.
+
+## The Model
+
+This dashboard reflects the number of cases predicted to occur across the United States across time. The model is based on the death rate due to the disease, the recovery rate from the disease, and the transmission rate. 
+
+The model used in the dashboard is a basic SIR model assuming frequency-dependent transmission and was created using the [EpiDynamics](https://cran.r-project.org/web/packages/EpiDynamics/EpiDynamics.pdf) package in R. 
+
+The data for this model is sourced from [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19) for the current cases in the USA (excluding those from cruise ships) and United States Census Bureau population estimates for United States states (2018).
+
+
+## COVID-19 Information
+
+The death rate due to COVID-19 has been estimated in various ways, and the true rate is still unknown. The WHO has estimated a [global mortality rate of 3.4% of infections](https://www.who.int/dg/speeches/detail/who-director-general-s-opening-remarks-at-the-media-briefing-on-covid-19---3-march-2020). However, the actual death rate due to COVID-19 is likely to be lower than 3.4%, [as many cases of the disease go untested and are therefore unknown](https://www.bmj.com/content/368/bmj.m606/rr-5). In countries which have implemented extensive testing, such as South Korea, the mortality rate is [around .7%](https://www.statista.com/statistics/1095848/south-korea-confirmed-and-suspected-coronavirus-cases/). In addition, the mortality rate due to COVID-19 is impacted by both [social factors](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30567-5/fulltext) and [individual factors](https://www.thelancet.com/lancet/article/s0140-6736(20)30566-3), such as as age and comorbid health conditions.
+
+The clinical recovery time for COVID-19 is approximately two weeks, according to [P. 14 of a report by the WHO](https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf). However, this time frame varies widely between individuals, depending on the severity of the case. Transmission of the virus may occur prior to symptoms appearing, and there are estimates that the average COVID-19 case results in between [2.2 and 2.5 new cases](https://www.eurekalert.org/pub_releases/2020-03/uoo-irt030620.php).
+
+
+## Disclaimer
+
+The authors claim no institutional affiliation and make no claims regarding the accuracy of the information provided. In fact, it is inevitable that the model will contain inaccuracies, as it does not account for containment strategies that may be implemented by states or the federal government to reduce disease transmission, nor does it take into account differential healthcare capabilities across the country, which could impact mortality. Additionally, the model is based upon estimations developed by initial research into a new disease for which data is still developing. 
+
